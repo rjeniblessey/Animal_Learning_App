@@ -44,6 +44,7 @@ o	Optimization using Adam optimizer
 •	Ensures fast and lightweight execution on mobile devices.
 
 Features 
+
 ✔ Image-based learning
 ✔ Sequence prediction (one-by-one image processing)
 ✔ Next and Previous navigation buttons
@@ -55,6 +56,7 @@ Features
 ✔ Interactive and game-based learning style
 
  Tools & Technologies Used
+ 
 •	Programming Language: Python
 •	Deep Learning Framework: TensorFlow / Keras
 •	Model: MobileNetV2
