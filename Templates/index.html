@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Learning App</title>
+
+    <!-- Proper CSS linking -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+<h1 class="title">🐾 Animal Learning App</h1>
+
+<div class="container">
+
+    <div class="image-card">
+        <img id="animalImage"
+             src="/images/{{ image }}"
+             onclick="speakImage()">
+    </div>
+
+    <h2 id="label" class="animal-name">{{ label }}</h2>
+
+    <div class="buttons">
+        <button onclick="previousImage()">⬅ Previous</button>
+        <button onclick="nextImage()">Next ➡</button>
+    </div>
+
+</div>
+
+<audio id="audioPlayer"></audio>
+
+<script>
+function speakImage() {
+    let text = document.getElementById("label").innerText;
+
+    fetch("/speak", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({text: text})
+    })
+    .then(response => response.json())
+    .then(data => {
+        let audio = document.getElementById("audioPlayer");
+        audio.src = "/audio/" + data.audio;
+        audio.play();
+    });
+}
+
+function nextImage() {
+    fetch("/next")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("animalImage").src =
+            "/images/" + data.image;
+        document.getElementById("label").innerText = data.label;
+    });
+}
+
+function previousImage() {
+    fetch("/previous")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("animalImage").src =
+            "/images/" + data.image;
+        document.getElementById("label").innerText = data.label;
+    });
+}
+</script>
+
+</body>
+</html>
