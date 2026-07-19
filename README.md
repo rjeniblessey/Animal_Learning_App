@@ -1,4 +1,4 @@
-Project Title: Animal Learning app
+# Project Title: Animal Learning app
 
  Project Overview
 The Intelligence Game Based Language Education System is an AI-powered learning application designed to help users learn language vocabulary using images and audio.
@@ -6,7 +6,7 @@ The system uses a deep learning model trained on an image dataset to recognize o
 The trained model is developed using MobileNetV2 and later converted into TensorFlow Lite (TFLite) format to deploy the system as a mobile application.
 The application contains Next and Previous buttons to navigate through images and predict them one by one in sequence order.
 
-Project Description
+# Project Description
 In this project, a dataset containing labeled images of different objects is collected and used to train a deep learning model.The trained model learns to identify the image classes and is capable of predicting unseen images (new images not used during training).
 When the application runs:
 1.	An image is displayed on the screen.
@@ -16,7 +16,7 @@ When the application runs:
 5.	The user can click Next or Previous buttons to move forward or backward through the image sequence.
 This approach helps users learn vocabulary visually and audibly, making the system suitable for children and beginners in language learning.
 
-Techniques Used
+# Techniques Used
 1. Dataset Preparation
 •	Image dataset containing multiple object classes.
 •	Images are labelled according to their class names.
@@ -43,7 +43,7 @@ o	Optimization using Adam optimizer
 •	TFLite model is integrated into a mobile application.
 •	Ensures fast and lightweight execution on mobile devices.
 
-Features 
+# Features 
 
 ✔ Image-based learning
 ✔ Sequence prediction (one-by-one image processing)
@@ -55,7 +55,7 @@ Features
 ✔ Supports unseen image prediction
 ✔ Interactive and game-based learning style
 
- Tools & Technologies Used
+# Tools & Technologies Used
  
 •	Programming Language: Python
 •	Deep Learning Framework: TensorFlow / Keras
